@@ -17,7 +17,7 @@ RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/s
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 
 RUN echo "alias python=/usr/bin/python3" >> /etc/profile
-RUN echo "alias recipes=/var/recipes/recipes" >> /etc/profile
+RUN echo "alias recipes=/var/recipes/lazymeals" >> /etc/profile
 
 COPY / /var/recipes/
 WORKDIR /var/recipes

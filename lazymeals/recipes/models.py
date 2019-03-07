@@ -1,6 +1,8 @@
 from django.contrib.postgres.fields import JSONField
 from django.db import models
 
+from recipes.constants import RECIPE_STATUS_CREATED, RECIPE_STATUS_CHOICES
+
 
 class SourceWebsite(models.Model):
 	url = models.CharField(max_length=1024, verbose_name="url")
@@ -21,6 +23,8 @@ class Recipe(models.Model):
 	ingredients_json = JSONField(default=list, verbose_name="ingredients json")
 	directions_json = JSONField(default=list, verbose_name="directions json")
 	image_url = models.CharField(max_length=1024, blank=True, verbose_name="image url")
+	status = models.SmallIntegerField(default=RECIPE_STATUS_CREATED, choices=RECIPE_STATUS_CHOICES,
+									  verbose_name="status")
 	created = models.DateTimeField(auto_now_add=True, verbose_name="created")
 	updated = models.DateTimeField(auto_now=True, verbose_name="updated")
 
