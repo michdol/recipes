@@ -1,0 +1,26 @@
+{% load compile_static %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static "base.less"|compile %}" />
+    {% block extra_css %}{% endblock extra_css %}
+</head>
+<body>
+    <div id="header">
+        <h1>header</h1>
+    </div>
+    <div id="side_menu">
+        <h1>side menu</h1>
+    </div>
+    <div id="main_content">
+        {% block content %}
+        {% endblock content %}
+    </div>
+    <div id="footer">
+        <h1>footer</h1>
+    </div>
+</body>
+</html>

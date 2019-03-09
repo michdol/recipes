@@ -11,10 +11,14 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+
+import sys
+
 from .settings_credentials import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT_DIR = os.path.dirname(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -43,7 +47,11 @@ PROJECT_APPS = (
 	'users'
 )
 
-INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
+THIRD_PARTY_APPS = (
+	'static_precompiler',
+)
+
+INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
 	'django.middleware.security.SecurityMiddleware',
@@ -60,7 +68,7 @@ ROOT_URLCONF = 'lazymeals.urls.urls'
 TEMPLATES = [
 	{
 		'BACKEND': 'django.template.backends.django.DjangoTemplates',
-		'DIRS': [],
+		'DIRS': [os.path.join(ROOT_DIR, 'templates')],
 		'APP_DIRS': True,
 		'OPTIONS': {
 			'context_processors': [
@@ -126,4 +134,21 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+	os.path.join(ROOT_DIR, 'static')
+]
+
+STATIC_PRECOMPILER_ROOT = os.path.join(ROOT_DIR, 'static')
+
 SITE_ID = 1
+
+# SECURITY WARNING: don't run with debug turned on in production!
+TESTING = sys.argv[1:2] == ['test']
+
+STATIC_PRECOMPILER_COMPILERS = (
+	('static_precompiler.compilers.LESS', {
+		"executable": "/usr/local/bin/lessc",
+		"sourcemap_enabled": True,
+		"global_vars": {"link-color": "red"},
+	}),
+)
