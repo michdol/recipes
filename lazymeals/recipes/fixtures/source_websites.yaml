@@ -1,0 +1,5 @@
+- model: recipes.sourcewebsite
+  pk: 1
+  fields:
+    url: "https://tasty.co"
+    is_active: true

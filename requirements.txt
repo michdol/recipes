@@ -1,3 +1,4 @@
+beautifulsoup4==4.7.1
 django-cors-headers==2.2.0
 djangorestframework==3.7.7
 django-static-precompiler==1.8.2
@@ -25,3 +26,4 @@ pytz==2018.9
 traitlets==4.3.2
 urllib3==1.13.1
 wcwidth==0.1.7
+mock==2.0.0
