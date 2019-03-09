@@ -9,11 +9,12 @@
 <h1>INDEX.HTML</h1>
 <ul id="main_recipes">
     {% for recipe in recipes %}
-    <div class="recipe">
-        <p>{{ recipe.name }}</p>
-        <p>{{ recipe.url }}</p>
-    {#    <img src="{{ recipe.image_url }}">#}
-    </div>
+    <li class="recipe">
+        <div class="recipe_image">
+            <img src="{{ recipe.image_url }}">
+        </div>
+        <a href="{% url 'recipes:details' %}" class="name">{{ recipe.name }}</a>
+    </li>
     {% endfor %}
 </ul>
 {% endblock content %}

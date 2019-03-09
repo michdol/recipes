@@ -11,3 +11,7 @@ class IndexView(TemplateView):
 		context = super().get_context_data(**kwargs)
 		context["recipes"] = Recipe.objects.filter(status__gte=RECIPE_STATUS_PUBLIC)
 		return context
+
+
+class RecipeDetails(TemplateView):
+	template_name = 'recipes/details.html'
