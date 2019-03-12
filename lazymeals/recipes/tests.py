@@ -33,7 +33,7 @@ class TastyScrapperTest(ScrapperTestMixin, TestCase):
 		self.assertEqual(url, expected)
 
 	@mock.patch("recipes.scrapers.requests.Session", autospec=True)
-	def test_main(self, mock_get):
+	def test_main(self, mock_session):
 		api_response_file = os.path.join(self.TEST_DATA_DIRECTORY, 'tasty_api_response.json')
 		api_next_response_file = os.path.join(self.TEST_DATA_DIRECTORY, 'tasty_api_next_response.json')
 		empty_response = {
@@ -61,12 +61,44 @@ class TastyScrapperTest(ScrapperTestMixin, TestCase):
 		with open(api_next_response_file, encoding="utf-8") as response:
 			side_effects.append(json.loads(response.read()))
 		side_effects.append(empty_response)
-		mock_get.return_value.get.return_value.json.side_effect = side_effects
-		self.scrapper.main()
+		mock_session.return_value.get.return_value.json.side_effect = side_effects
+		ret = self.scrapper.main()
+		self.assertTrue(ret)
 		qs = Recipe.objects.all()
 		self.assertEqual(qs.count(), 40)
+		self.assertEqual(self.scrapper.requests_count, 3)
 
 		recipe = qs.get(name='Kid-Friendly Fried Rice 4 Ways')
+		self.assertEqual(recipe.source_id, 1)
+		self.assertEqual(recipe.url, 'https://tasty.co/compilation/4-ways-to-make-fried-rice/')
+		self.assertEqual(recipe.image_url, 'https://img.buzzfeed.com/video-api-prod/assets/29c929d88b3646a08c020a7a62629255/BFV24904_FriedRice4Ways_ThumbFB.jpg?output-format=webp&output-quality=60&resize=600:*')
+		recipe_extra = recipe.extra
+		self.assertEqual(recipe_extra.get('id'), 183)
+		self.assertEqual(recipe_extra.get('tags'), 'stove_top,weeknight,easy,fusion,mixing_bowl,japanese,dry_measuring_cups,kid_friendly,measuring_spoons,one_pot_or_pan,dinner,wok,pyrex,american,liquid_measuring_cup,pan_fry,wooden_spoon')
+		self.assertEqual(recipe_extra.get('type'), 'compilation')
+		self.assertEqual(recipe_extra.get('object_name'), '4-ways-to-make-fried-rice')
+
+	@mock.patch("recipes.scrapers.requests.Session", autospec=True)
+	def test_main_exception_on_request(self, mock_session):
+		mock_session.return_value.get.side_effect = ValueError("mock error")
+		ret = self.scrapper.main()
+		self.assertFalse(ret)
+		self.assertEqual(self.scrapper.requests_count, 0)
+
+	@mock.patch("recipes.scrapers.requests.Session", autospec=True)
+	def test_main_request_limit_reached(self, mock_session):
+		api_response_file = os.path.join(self.TEST_DATA_DIRECTORY, 'tasty_api_response.json')
+		with open(api_response_file, encoding="utf-8") as response:
+			mock_session.return_value.get.return_value.json.return_value = json.loads(response.read())
+		self.scrapper.requests_count = 9
+
+		ret = self.scrapper.main()
+		self.assertTrue(ret)
+		qs = Recipe.objects.all()
+		self.assertEqual(qs.count(), 20)
+		self.assertEqual(self.scrapper.requests_count, 10)
+
+		recipe = Recipe.objects.get(name='Kid-Friendly Fried Rice 4 Ways')
 		self.assertEqual(recipe.source_id, 1)
 		self.assertEqual(recipe.url, 'https://tasty.co/compilation/4-ways-to-make-fried-rice/')
 		self.assertEqual(recipe.image_url, 'https://img.buzzfeed.com/video-api-prod/assets/29c929d88b3646a08c020a7a62629255/BFV24904_FriedRice4Ways_ThumbFB.jpg?output-format=webp&output-quality=60&resize=600:*')
@@ -146,9 +178,9 @@ class TastyScrapperTest(ScrapperTestMixin, TestCase):
 
 	def test__create_tasty_url(self):
 		url = self.scrapper._create_tasty_url('slug', 'recipe')
-		self.assertEqual(url, 'https://tasty.co/recipe/slug')
+		self.assertEqual(url, 'https://tasty.co/recipe/slug/')
 		url = self.scrapper._create_tasty_url('slug1', 'compilation')
-		self.assertEqual(url, 'https://tasty.co/compilation/slug1')
+		self.assertEqual(url, 'https://tasty.co/compilation/slug1/')
 
 	def test_create_recipes(self):
 		items = [
