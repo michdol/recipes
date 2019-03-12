@@ -11,7 +11,7 @@ class IndexView(TemplateView):
 		context = super().get_context_data(**kwargs)
 		context["recipes"] = Recipe.objects.filter(status__gte=RECIPE_STATUS_PUBLIC)
 		from recipes.scrapers import TastyScrapper
-		TastyScrapper(website_id=1).main()
+		TastyScrapper().main()
 		return context
 
 

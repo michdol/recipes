@@ -5,6 +5,7 @@ from recipes.constants import RECIPE_STATUS_CREATED, RECIPE_STATUS_CHOICES
 
 
 class SourceWebsite(models.Model):
+	name = models.CharField(max_length=128, verbose_name="name")
 	url = models.CharField(max_length=1024, verbose_name="url")
 	is_active = models.BooleanField(default=True, verbose_name="is active")
 
@@ -25,6 +26,7 @@ class Recipe(models.Model):
 	image_url = models.CharField(max_length=1024, blank=True, verbose_name="image url")
 	status = models.SmallIntegerField(default=RECIPE_STATUS_CREATED, choices=RECIPE_STATUS_CHOICES,
 									  verbose_name="status")
+	extra = JSONField(default=dict, verbose_name="extra data")
 	created = models.DateTimeField(auto_now_add=True, verbose_name="created")
 	updated = models.DateTimeField(auto_now=True, verbose_name="updated")
 
