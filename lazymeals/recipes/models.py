@@ -18,7 +18,7 @@ class Recipe(models.Model):
 	source = models.ForeignKey(SourceWebsite, on_delete=models.DO_NOTHING, related_name="recipes",
 							   verbose_name="source website")
 	name = models.CharField(max_length=256, verbose_name="name")
-	url = models.CharField(max_length=1024, blank=True, verbose_name="url")
+	url = models.CharField(max_length=1024, unique=True, verbose_name="url")
 	ingredients = models.TextField(verbose_name="ingredients")
 	directions = models.TextField(verbose_name="directions")
 	ingredients_json = JSONField(default=list, verbose_name="ingredients json")

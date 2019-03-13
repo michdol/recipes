@@ -1,13 +1,15 @@
+import json
 import operator
-from time import sleep
-
 import requests
 
-from requests.exceptions import RequestException
-from contextlib import closing
 from bs4 import BeautifulSoup
+from contextlib import closing
+from requests.exceptions import RequestException
+from time import sleep
 
-from recipes.constants import TASTY_SOURCE_ID
+from django.db import connection
+
+from recipes.constants import TASTY_SOURCE_ID, RECIPE_STATUS_CREATED
 from recipes.models import SourceWebsite, Recipe
 
 
@@ -88,21 +90,34 @@ class TastyScrapper(object):
 		self.recipe_count = response.get('recipe_count')
 
 	def create_recipes(self, items):
-		recipes = []
+		values = self.generate_sql_values(items)
+		with connection.cursor() as cursor:
+			cursor.execute("""
+			INSERT INTO recipes_recipe (source_id, name, url, image_url, extra, ingredients, directions, ingredients_json, directions_json, status, created, updated)
+			VALUES {values}
+			ON CONFLICT DO NOTHING;
+			""".format(values=values))
+
+	def generate_sql_values(self, items):
+		values = []
 		for item in items:
-			recipes.append(Recipe(
+			values.append("({source_id},'{name}','{url}','{image_url}','{extra}','','','[]','[]',{status},current_timestamp,current_timestamp)".format(
 				source_id=self.website_id,
 				name=item.get('name'),
 				url=self._create_tasty_url(item.get('slug'), item.get('type')),
 				image_url=item.get('thumb_big'),
-				extra={
-					'id': item.get('id'),
-					'tags': ','.join(item.get('tags')),
-					'type': item.get('type'),
-					'object_name': item.get('object_name')
-				}
+				extra=self.generate_json_value(item),
+				status=RECIPE_STATUS_CREATED
 			))
-		Recipe.objects.bulk_create(recipes)
+		return ','.join(values)
+
+	def generate_json_value(self, item):
+		return json.dumps({
+			'id': item.get('id'),
+			'tags': ','.join(item.get('tags')),
+			'type': item.get('type'),
+			'object_name': item.get('object_name')
+		})
 
 	def _create_tasty_url(self, slug, type_):
 		return self.base_url.format('{type}/{slug}/'.format(type=type_, slug=slug))

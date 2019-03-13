@@ -65,7 +65,7 @@ class TastyScrapperTest(ScrapperTestMixin, TestCase):
 		ret = self.scrapper.main()
 		self.assertTrue(ret)
 		qs = Recipe.objects.all()
-		self.assertEqual(qs.count(), 40)
+		self.assertEqual(qs.count(), 39)
 		self.assertEqual(self.scrapper.requests_count, 3)
 
 		recipe = qs.get(name='Kid-Friendly Fried Rice 4 Ways')
@@ -77,6 +77,8 @@ class TastyScrapperTest(ScrapperTestMixin, TestCase):
 		self.assertEqual(recipe_extra.get('tags'), 'stove_top,weeknight,easy,fusion,mixing_bowl,japanese,dry_measuring_cups,kid_friendly,measuring_spoons,one_pot_or_pan,dinner,wok,pyrex,american,liquid_measuring_cup,pan_fry,wooden_spoon')
 		self.assertEqual(recipe_extra.get('type'), 'compilation')
 		self.assertEqual(recipe_extra.get('object_name'), '4-ways-to-make-fried-rice')
+		# This is a duplicated recipe in responses.
+		self.assertIsNotNone(qs.get(name="One-Pot Ground Beef Stroganoff"))
 
 	@mock.patch("recipes.scrapers.requests.Session", autospec=True)
 	def test_main_exception_on_request(self, mock_session):
