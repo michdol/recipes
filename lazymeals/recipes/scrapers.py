@@ -1,9 +1,12 @@
 import json
+import logging
 import operator
 import requests
 
 from bs4 import BeautifulSoup
 from contextlib import closing
+
+from django.conf import settings
 from requests.exceptions import RequestException
 from time import sleep
 
@@ -12,6 +15,8 @@ from django.db import connection
 from recipes.constants import TASTY_SOURCE_ID, RECIPE_STATUS_CREATED
 from recipes.models import SourceWebsite, Recipe
 
+
+logger = logging.getLogger(getattr(settings, 'LOG_ROOT'))
 
 class TastyScrapper(object):
 	DEFAULT_PAGE_SIZE = 20
@@ -63,9 +68,9 @@ class TastyScrapper(object):
 			self.session = requests.Session()
 			self.scrape()
 		except Exception as e:
-			print("Exception occurred", e)
+			logger.error("Exception occurred: {}".format(e))
 			return False
-		print("Process finished successfully.")
+		logger.info("Successfully finished scraping {}.".format(self.website.url))
 		return True
 
 	def scrape(self):
@@ -111,6 +116,9 @@ class TastyScrapper(object):
 			))
 		return ','.join(values)
 
+	def _create_tasty_url(self, slug, type_):
+		return self.base_url.format('{type}/{slug}/'.format(type=type_, slug=slug))
+
 	def generate_json_value(self, item):
 		return json.dumps({
 			'id': item.get('id'),
@@ -118,6 +126,3 @@ class TastyScrapper(object):
 			'type': item.get('type'),
 			'object_name': item.get('object_name')
 		})
-
-	def _create_tasty_url(self, slug, type_):
-		return self.base_url.format('{type}/{slug}/'.format(type=type_, slug=slug))

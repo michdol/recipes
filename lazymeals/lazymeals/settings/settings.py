@@ -152,3 +152,33 @@ STATIC_PRECOMPILER_COMPILERS = (
 		"global_vars": {"link-color": "red"},
 	}),
 )
+
+LOG_ROOT = 'lazymeals'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+	'formatters': {
+        'verbose': {
+            'format': '[{levelname} {asctime} {module}] {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+			'formatter': 'verbose'
+        },
+    },
+    'loggers': {
+        '': {
+            'handlers': ['console'],
+            'level': 'INFO',
+			'propagate': True
+        },
+    },
+}

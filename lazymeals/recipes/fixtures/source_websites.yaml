@@ -1,5 +1,6 @@
 - model: recipes.sourcewebsite
   pk: 1
   fields:
+    name: "Tasty"
     url: "https://tasty.co"
     is_active: true
