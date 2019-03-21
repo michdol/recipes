@@ -26,6 +26,8 @@ ROOT_DIR = os.path.dirname(BASE_DIR)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+SITE_NAME = 'lazymeals'
+
 ALLOWED_HOSTS = ['*']
 
 # Application definition
@@ -44,11 +46,13 @@ PROJECT_APPS = (
 	'lazymeals',
 	'recipes',
 	'tags',
-	'users'
+	'users',
+	'utils',
 )
 
 THIRD_PARTY_APPS = (
 	'static_precompiler',
+	'rest_framework'
 )
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
@@ -56,6 +60,7 @@ INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
 MIDDLEWARE = [
 	'django.middleware.security.SecurityMiddleware',
 	'django.contrib.sessions.middleware.SessionMiddleware',
+	'subdomains.middleware.SubdomainURLRoutingMiddleware',
 	'django.middleware.common.CommonMiddleware',
 	'django.middleware.csrf.CsrfViewMiddleware',
 	'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -63,7 +68,7 @@ MIDDLEWARE = [
 	'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'lazymeals.urls.urls'
+ROOT_URLCONF = 'lazymeals.urls.frontend'
 
 TEMPLATES = [
 	{
@@ -140,6 +145,13 @@ STATICFILES_DIRS = [
 
 STATIC_PRECOMPILER_ROOT = os.path.join(ROOT_DIR, 'static')
 
+SUBDOMAIN_API = 'api'
+SUBDOMAIN_URLCONFS = {
+    None: '%s.urls.frontend' % SITE_NAME,
+    'www': '%s.urls.frontend' % SITE_NAME,
+    SUBDOMAIN_API: '%s.urls.api' % SITE_NAME,
+}
+
 SITE_ID = 1
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -181,4 +193,12 @@ LOGGING = {
 			'propagate': True
         },
     },
+}
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
 }
