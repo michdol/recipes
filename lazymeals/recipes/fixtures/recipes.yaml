@@ -1,0 +1,805 @@
+- model: recipes.recipe
+  pk: 1
+  fields:
+    source: 1
+    name: Flavorful Egg Recipes Anyone Can Make
+    url: https://tasty.co/compilation/flavorful-egg-recipes-anyone-can-make/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/206629.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 881, object_name: flavorful-egg-recipes-anyone-can-make, tags: 'mixing_bowl,measuring_spoons,chefs_knife,pyrex,cutting_board',
+      type: compilation}
+    created: 2019-03-12 00:57:02+0000
+    updated: 2019-03-12 00:57:02+0000
+- model: recipes.recipe
+  pk: 2
+  fields:
+    source: 1
+    name: Vegan Pizza 2 Ways
+    url: https://tasty.co/compilation/vegan-pizza-2-ways/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/206368.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 876, object_name: vegan-pizza-2-ways, tags: 'cutting_board,vegan,comfort_food,spatula,chefs_knife,measuring_spoons,baking_pan,oven_mitts,vegetarian,oven,parchment_paper,dairy_free,pyrex,bake',
+      type: compilation}
+    created: 2019-03-12 00:57:02+0000
+    updated: 2019-03-12 00:57:02+0000
+- model: recipes.recipe
+  pk: 3
+  fields:
+    source: 1
+    name: Dairy-Free Chicken Fettuccine Alfredo
+    url: https://tasty.co/recipe/dairy-free-chicken-fettuccine-alfredo/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/206391.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4816, object_name: dairy-free-chicken-fettuccine-alfredo, tags: 'dairy_free,dinner,date_night,weeknight,stove_top,pan_fry,pyrex,sauce_pan,saute_pan,tongs,whisk,chefs_knife,cutting_board,liquid_measuring_cup,dry_measuring_cups,measuring_spoons',
+      type: recipe}
+    created: 2019-03-12 00:57:02+0000
+    updated: 2019-03-12 00:57:02+0000
+- model: recipes.recipe
+  pk: 4
+  fields:
+    source: 1
+    name: 6 Delectable Churros Recipes
+    url: https://tasty.co/compilation/6-delectable-churros-recipes/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/205999.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 867, object_name: 6-delectable-churros-recipes, tags: 'mixing_bowl,dry_measuring_cups,measuring_spoons,pyrex,stove_top',
+      type: compilation}
+    created: 2019-03-12 00:57:02+0000
+    updated: 2019-03-12 00:57:02+0000
+- model: recipes.recipe
+  pk: 5
+  fields:
+    source: 1
+    name: Steak Tacos &amp; Next Day Grain Bowl
+    url: https://tasty.co/recipe/steak-tacos-next-day-grain-bowl/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/206574.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4808, object_name: steak-tacos-next-day-grain-bowl, tags: 'dinner,weeknight,stove_top,pan_fry,pyrex,saute_pan,spatula,tongs,baking_pan,chefs_knife,cutting_board,dry_measuring_cups,measuring_spoons,mixing_bowl',
+      type: recipe}
+    created: 2019-03-12 00:57:02+0000
+    updated: 2019-03-12 00:57:02+0000
+- model: recipes.recipe
+  pk: 6
+  fields:
+    source: 1
+    name: Chicken and Wild Rice Soup And Sandwich
+    url: https://tasty.co/compilation/chicken-and-wild-rice-soup-and-sandwich/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/206416.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 869, object_name: chicken-and-wild-rice-soup-and-sandwich, tags: 'cutting_board,special_occasion,date_night,dry_measuring_cups,chefs_knife,measuring_spoons,dinner,pyrex',
+      type: compilation}
+    created: 2019-03-12 00:57:02+0000
+    updated: 2019-03-12 00:57:02+0000
+- model: recipes.recipe
+  pk: 7
+  fields:
+    source: 1
+    name: Raspberry Chocolate Greek Yogurt Cheesecake
+    url: https://tasty.co/recipe/raspberry-chocolate-greek-yogurt-cheesecake/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/206421.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4805, object_name: raspberry-chocolate-greek-yogurt-cheesecake, tags: 'vegetarian,desserts,bake,date_night,food_processor,microwave,oven,special_occasion,cake_pan,oven_mitts,pyrex,spatula,chefs_knife,cutting_board,liquid_measuring_cup,dry_measuring_cups,measuring_spoons,mixing_bowl,sieve',
+      type: recipe}
+    created: 2019-03-12 00:57:02+0000
+    updated: 2019-03-12 00:57:02+0000
+- model: recipes.recipe
+  pk: 8
+  fields:
+    source: 1
+    name: Hearty Winter Vegetable Salad With Black Onion Seed Vinaigrette
+    url: https://tasty.co/recipe/hearty-winter-vegetable-salad-with-black-onion-seed-vinaigrette/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/206397.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4804, object_name: hearty-winter-vegetable-salad-with-black-onion-seed-vinaigrette,
+      tags: 'healthy,lunch,winter,stove_top,oven_mitts,tongs,baking_pan,chefs_knife,cutting_board,measuring_spoons,mixing_bowl',
+      type: recipe}
+    created: 2019-03-12 00:57:02+0000
+    updated: 2019-03-12 00:57:02+0000
+- model: recipes.recipe
+  pk: 9
+  fields:
+    source: 1
+    name: Recipes Using Leftover Food
+    url: https://tasty.co/compilation/leftover-foods/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/206200.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 868, object_name: leftover-foods, tags: 'dry_measuring_cups,pyrex',
+      type: compilation}
+    created: 2019-03-12 00:57:02+0000
+    updated: 2019-03-12 00:57:02+0000
+- model: recipes.recipe
+  pk: 10
+  fields:
+    source: 1
+    name: Chocolate Coconut Sheet Cake
+    url: https://tasty.co/recipe/chocolate-coconut-sheet-cake/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/206142.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4803, object_name: chocolate-coconut-sheet-cake, tags: 'easy,desserts,bake,hand_mixer,oven,indulgent_sweets,ice_cream_scoop,oven_mitts,parchment_paper,pyrex,spatula,whisk,baking_pan,chefs_knife,cutting_board,liquid_measuring_cup,dry_measuring_cups,measuring_spoons,mixing_bowl,sieve',
+      type: recipe}
+    created: 2019-03-12 00:57:02+0000
+    updated: 2019-03-12 00:57:02+0000
+- model: recipes.recipe
+  pk: 11
+  fields:
+    source: 1
+    name: 'Pizza Nachos '
+    url: https://tasty.co/recipe/pizza-nachos-recipe/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/206078.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4802, object_name: pizza-nachos-recipe, tags: 'under_30_minutes,snacks,bake,game_day,casual_party,oven,baking_pan,measuring_spoons',
+      type: recipe}
+    created: 2019-03-12 00:57:02+0000
+    updated: 2019-03-12 00:57:02+0000
+- model: recipes.recipe
+  pk: 12
+  fields:
+    source: 1
+    name: Chicken And Dumplings
+    url: https://tasty.co/recipe/chicken-and-dumplings/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/206060.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4801, object_name: chicken-and-dumplings, tags: 'dinner,weeknight,stove_top,pyrex,tongs,chefs_knife,cutting_board,liquid_measuring_cup,dry_measuring_cups,measuring_spoons,mixing_bowl,sieve',
+      type: recipe}
+    created: 2019-03-12 00:57:02+0000
+    updated: 2019-03-12 00:57:02+0000
+- model: recipes.recipe
+  pk: 13
+  fields:
+    source: 1
+    name: 'Potato Bhajias '
+    url: https://tasty.co/recipe/potato-bhajias-recipe/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/26f85e31bb2f4bdea1553190dd2be06f/OO_Potato.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4800, object_name: potato-bhajias-recipe, tags: 'easy,appetizers,snacks,deep_fry,game_day,stove_top,pyrex,spatula,chefs_knife,cutting_board,liquid_measuring_cup,dry_measuring_cups,measuring_spoons,mixing_bowl,spider,black_history_month',
+      type: recipe}
+    created: 2019-03-12 00:57:02+0000
+    updated: 2019-03-12 00:57:02+0000
+- model: recipes.recipe
+  pk: 14
+  fields:
+    source: 1
+    name: Mandazi
+    url: https://tasty.co/recipe/mandazi/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/69e427ab880d491d8aba5877bb82d975/OO_Mandazi.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4799, object_name: mandazi, tags: 'desserts,deep_fry,casual_party,stove_top,pyrex,sauce_pan,spatula,whisk,chefs_knife,cutting_board,liquid_measuring_cup,dry_measuring_cups,measuring_spoons,mixing_bowl,african,black_history_month',
+      type: recipe}
+    created: 2019-03-12 00:57:02+0000
+    updated: 2019-03-12 00:57:02+0000
+- model: recipes.recipe
+  pk: 15
+  fields:
+    source: 1
+    name: '6 Curry Recipes To Satisfy Your Cravings '
+    url: https://tasty.co/compilation/6-curry-recipes-to-satisfy-your-cravings/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/205587.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 866, object_name: 6-curry-recipes-to-satisfy-your-cravings, tags: 'cutting_board,comfort_food,chefs_knife,measuring_spoons,dinner,liquid_measuring_cup',
+      type: compilation}
+    created: 2019-03-12 00:57:02+0000
+    updated: 2019-03-12 00:57:02+0000
+- model: recipes.recipe
+  pk: 16
+  fields:
+    source: 1
+    name: 4 Desserts For Coffee Lovers
+    url: https://tasty.co/compilation/4-desserts-for-coffee-lovers/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/205790.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 865, object_name: 4-desserts-for-coffee-lovers, tags: 'mixing_bowl,dry_measuring_cups',
+      type: compilation}
+    created: 2019-03-12 00:57:02+0000
+    updated: 2019-03-12 00:57:02+0000
+- model: recipes.recipe
+  pk: 17
+  fields:
+    source: 1
+    name: 6 Delicious Recipes for Curry Night
+    url: https://tasty.co/compilation/6-delicious-recipes-for-curry-night/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/106028.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 864, object_name: 6-delicious-recipes-for-curry-night, tags: 'cutting_board,dry_measuring_cups,chefs_knife,measuring_spoons,dinner,pyrex',
+      type: compilation}
+    created: 2019-03-12 00:57:02+0000
+    updated: 2019-03-12 00:57:02+0000
+- model: recipes.recipe
+  pk: 18
+  fields:
+    source: 1
+    name: Chili Con Queso
+    url: https://tasty.co/recipe/chili-con-queso/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/205764.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4798, object_name: chili-con-queso, tags: 'game_day,weeknight,cast_iron_pan,stove_top,pan_fry,pyrex,sauce_pan,whisk,wooden_spoon,baking_pan,chefs_knife,cutting_board,liquid_measuring_cup,dry_measuring_cups,measuring_spoons,mixing_bowl',
+      type: recipe}
+    created: 2019-03-12 00:57:02+0000
+    updated: 2019-03-12 00:57:02+0000
+- model: recipes.recipe
+  pk: 19
+  fields:
+    source: 1
+    name: Peanut Butter, Strawberry, And Banana Quesadilla
+    url: https://tasty.co/recipe/peanut-butter-strawberry-and-banana-quesadilla/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/205721.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4796, object_name: peanut-butter-strawberry-and-banana-quesadilla,
+      tags: 'easy,under_30_minutes,breakfast,stove_top,pan_fry,pyrex,saute_pan,spatula,baking_pan,chefs_knife,cutting_board,dry_measuring_cups,measuring_spoons,mixing_bowl',
+      type: recipe}
+    created: 2019-03-12 00:57:02+0000
+    updated: 2019-03-12 00:57:02+0000
+- model: recipes.recipe
+  pk: 20
+  fields:
+    source: 1
+    name: Siga Tibs And Ethiopian Salad
+    url: https://tasty.co/recipe/siga-tibs-and-ethiopian-salad/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/205675.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4794, object_name: siga-tibs-and-ethiopian-salad, tags: 'comfort_food,easy,dinner,tasty_cookbook,stove_top,pan_fry,spatula,wooden_spoon,chefs_knife,cutting_board,mixing_bowl,african,black_history_month',
+      type: recipe}
+    created: 2019-03-12 00:57:02+0000
+    updated: 2019-03-12 00:57:02+0000
+- model: recipes.recipe
+  pk: 21
+  fields:
+    source: 1
+    name: Cod With Confetti Coconut Rice
+    url: https://tasty.co/recipe/cod-with-confetti-coconut-rice/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/205308.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4795, object_name: cod-with-confetti-coconut-rice, tags: 'seafood,dinner,date_night,stove_top,pan_fry,special_occasion,pyrex,sauce_pan,spatula,tongs,wooden_spoon,baking_pan,chefs_knife,cutting_board,liquid_measuring_cup,dry_measuring_cups,measuring_spoons,one_top_app_seafood,pescatarian',
+      type: recipe}
+    created: 2019-03-12 00:57:04+0000
+    updated: 2019-03-12 00:57:04+0000
+- model: recipes.recipe
+  pk: 22
+  fields:
+    source: 1
+    name: "Marcus Samuelsson\u2019s Tibs"
+    url: https://tasty.co/recipe/marcus-samuelssons-tibs/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/cce4b014d3e54fbca75d581f1c73b12f/BFV54203_MarcusBHM-YT.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4792, object_name: marcus-samuelssons-tibs, tags: 'comfort_food,dinner,stove_top,big_batch,special_occasion,wooden_spoon,chefs_knife,cutting_board,mixing_bowl,african,black_history_month',
+      type: recipe}
+    created: 2019-03-12 00:57:04+0000
+    updated: 2019-03-12 00:57:04+0000
+- model: recipes.recipe
+  pk: 23
+  fields:
+    source: 1
+    name: Power Protein Brownies
+    url: https://tasty.co/recipe/power-protein-brownies/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/205552.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4791, object_name: power-protein-brownies, tags: 'desserts,bake,oven,oven_mitts,baking_pan,chefs_knife,cutting_board,mixing_bowl',
+      type: recipe}
+    created: 2019-03-12 00:57:04+0000
+    updated: 2019-03-12 00:57:04+0000
+- model: recipes.recipe
+  pk: 24
+  fields:
+    source: 1
+    name: Mint Chocolate Cookie Dome Cake
+    url: https://tasty.co/recipe/mint-chocolate-cookie-dome-cake/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/205439.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4790, object_name: mint-chocolate-cookie-dome-cake, tags: 'desserts,casual_party,freezer,hand_mixer,oven,indulgent_sweets,special_occasion,cake_pan,oven_mitts,spatula,liquid_measuring_cup,dry_measuring_cups,measuring_spoons',
+      type: recipe}
+    created: 2019-03-12 00:57:04+0000
+    updated: 2019-03-12 00:57:04+0000
+- model: recipes.recipe
+  pk: 25
+  fields:
+    source: 1
+    name: Carrot Cake
+    url: https://tasty.co/recipe/carrot-cake/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/205294.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4788, object_name: carrot-cake, tags: 'desserts,bake,hand_mixer,special_occasion,cake_pan,cheese_grater,spatula,cutting_board,mixing_bowl',
+      type: recipe}
+    created: 2019-03-12 00:57:04+0000
+    updated: 2019-03-12 00:57:04+0000
+- model: recipes.recipe
+  pk: 26
+  fields:
+    source: 1
+    name: Chocolate Berry Charlotte
+    url: https://tasty.co/recipe/chocolate-berry-charlotte/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/205175.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4787, object_name: chocolate-berry-charlotte, tags: 'desserts,bake,hand_mixer,oven,indulgent_sweets,peeler,baking_pan,chefs_knife,liquid_measuring_cup,dry_measuring_cups,measuring_spoons,mixing_bowl,sieve',
+      type: recipe}
+    created: 2019-03-12 00:57:04+0000
+    updated: 2019-03-12 00:57:04+0000
+- model: recipes.recipe
+  pk: 27
+  fields:
+    source: 1
+    name: Breakfast Sausage Egg Cups
+    url: https://tasty.co/recipe/breakfast-sausage-egg-cup/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/204584.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4786, object_name: breakfast-sausage-egg-cup, tags: 'easy,breakfast,kid_friendly,bake,oven,meal_prep,cupcake_pan,oven_mitts,pyrex,chefs_knife,cutting_board,measuring_spoons,mixing_bowl',
+      type: recipe}
+    created: 2019-03-12 00:57:04+0000
+    updated: 2019-03-12 00:57:04+0000
+- model: recipes.recipe
+  pk: 28
+  fields:
+    source: 1
+    name: "Tabitha Brown\u2019s Healthy Vegan Pizza Bagels"
+    url: https://tasty.co/recipe/tabitha-browns-healthy-vegan-pizza-bagels/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/205059.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4785, object_name: tabitha-browns-healthy-vegan-pizza-bagels, tags: 'american,vegan,vegetarian,easy,kid_friendly,snacks,bake,oven,mashup,oven_mitts,pyrex,baking_pan,chefs_knife,cutting_board,dry_measuring_cups,measuring_spoons,black_history_month',
+      type: recipe}
+    created: 2019-03-12 00:57:04+0000
+    updated: 2019-03-12 00:57:04+0000
+- model: recipes.recipe
+  pk: 29
+  fields:
+    source: 1
+    name: Instant Pot Lasagna
+    url: https://tasty.co/recipe/instant-pot-lasagna/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/204953.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4784, object_name: instant-pot-lasagna, tags: 'italian,comfort_food,dinner,steam,date_night,weeknight,oven,stove_top,cake_pan,oven_mitts,pyrex,spatula,wooden_spoon,baking_pan,chefs_knife,cutting_board,liquid_measuring_cup,dry_measuring_cups,measuring_spoons,mixing_bowl',
+      type: recipe}
+    created: 2019-03-12 00:57:04+0000
+    updated: 2019-03-12 00:57:04+0000
+- model: recipes.recipe
+  pk: 30
+  fields:
+    source: 1
+    name: Ribeye Steaks With Creamy Mustard Sauce As Made By Kiano Moju
+    url: https://tasty.co/recipe/ribeye-steaks-with-creamy-mustard-sauce-as-made-by-kiano-moju/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/85239391863841acba301e07427dcb9f/OO_Ribye.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4783, object_name: ribeye-steaks-with-creamy-mustard-sauce-as-made-by-kiano-moju,
+      tags: 'easy,dinner,date_night,weeknight,stove_top,pan_fry,tongs,wooden_spoon,chefs_knife,cutting_board,liquid_measuring_cup,measuring_spoons,black_history_month',
+      type: recipe}
+    created: 2019-03-12 00:57:04+0000
+    updated: 2019-03-12 00:57:04+0000
+- model: recipes.recipe
+  pk: 31
+  fields:
+    source: 1
+    name: Skirt Steak With Mustard Sauce As Made By Katano Kasaine
+    url: https://tasty.co/recipe/skirt-steak-with-mustard-sauce-as-made-by-katano-kasaine/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/54bd76aa32a54768b3b7f680c1cfd1cf/OO_Skirt.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4782, object_name: skirt-steak-with-mustard-sauce-as-made-by-katano-kasaine,
+      tags: 'easy,dinner,date_night,weeknight,stove_top,pan_fry,wooden_spoon,chefs_knife,cutting_board,liquid_measuring_cup,measuring_spoons,black_history_month',
+      type: recipe}
+    created: 2019-03-12 00:57:04+0000
+    updated: 2019-03-12 00:57:04+0000
+- model: recipes.recipe
+  pk: 32
+  fields:
+    source: 1
+    name: Dark Chocolate Peanut Butter Cups
+    url: https://tasty.co/recipe/dark-chocolate-peanut-butter-cups/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/204638.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4781, object_name: dark-chocolate-peanut-butter-cups, tags: 'comfort_food,vegetarian,5_ingredients_or_less,easy,desserts,kid_friendly,snacks,freezer,microwave,indulgent_sweets,special_occasion,cupcake_pan,pyrex,spatula,liquid_measuring_cup,dry_measuring_cups,measuring_spoons,mixing_bowl',
+      type: recipe}
+    created: 2019-03-12 00:57:04+0000
+    updated: 2019-03-12 00:57:04+0000
+- model: recipes.recipe
+  pk: 33
+  fields:
+    source: 1
+    name: Cheddar Biscuit Chicken Pot Pie
+    url: https://tasty.co/recipe/cheddar-biscuit-chicken-pot-pie/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/204573.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4780, object_name: cheddar-biscuit-chicken-pot-pie, tags: 'american,comfort_food,dinner,kid_friendly,bake,weeknight,winter,cast_iron_pan,oven,stove_top,big_batch,mashup,oven_mitts,pyrex,spatula,whisk,chefs_knife,cutting_board,liquid_measuring_cup,dry_measuring_cups,measuring_spoons,mixing_bowl',
+      type: recipe}
+    created: 2019-03-12 00:57:04+0000
+    updated: 2019-03-12 00:57:04+0000
+- model: recipes.recipe
+  pk: 34
+  fields:
+    source: 1
+    name: Jollof Risotto With Suya-Spiced Shrimp
+    url: https://tasty.co/recipe/jollof-risotto-with-suya-spiced-shrimp/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/204477.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4779, object_name: jollof-risotto-with-suya-spiced-shrimp, tags: 'dinner,blender,stove_top,special_occasion,sauce_pan,spatula,cutting_board,measuring_spoons,black_history_month',
+      type: recipe}
+    created: 2019-03-12 00:57:04+0000
+    updated: 2019-03-12 00:57:04+0000
+- model: recipes.recipe
+  pk: 35
+  fields:
+    source: 1
+    name: Easy Bagel Bite Lunch Ideas For Kids
+    url: https://tasty.co/recipe/easy-bagel-bite-lunch-ideas-for-kids/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/204398.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4778, object_name: easy-bagel-bite-lunch-ideas-for-kids, tags: 'american,easy,under_30_minutes,kid_friendly,lunch,bake,oven,mashup,oven_mitts,parchment_paper,pyrex,spatula,baking_pan,chefs_knife,cutting_board,dry_measuring_cups,measuring_spoons,mixing_bowl',
+      type: recipe}
+    created: 2019-03-12 00:57:04+0000
+    updated: 2019-03-12 00:57:04+0000
+- model: recipes.recipe
+  pk: 36
+  fields:
+    source: 1
+    name: Dark Chocolate Rice Cereal Treat Hearts
+    url: https://tasty.co/recipe/dark-chocolate-rice-cereal-treat-hearts/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/8ce1967142fb47f2a2e880f9d1e766a9/OO_Dessert.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4777, object_name: dark-chocolate-rice-cereal-treat-hearts, tags: 'easy,valentines_day,desserts,date_night,microwave,pan_fry,special_occasion,parchment_paper,pyrex,sauce_pan,spatula,baking_pan,dry_measuring_cups,measuring_spoons',
+      type: recipe}
+    created: 2019-03-12 00:57:04+0000
+    updated: 2019-03-12 00:57:04+0000
+- model: recipes.recipe
+  pk: 37
+  fields:
+    source: 1
+    name: Harissa Chicken With Leeks and Potatoes
+    url: https://tasty.co/recipe/harissa-chicken-with-leeks-and-potatoes/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/fdf79f2af6ed492b9d35da9568f6597e/OO_Chicken.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4776, object_name: harissa-chicken-with-leeks-and-potatoes, tags: 'healthy,valentines_day,dinner,bake,date_night,oven,oven_mitts,plastic_wrap,pyrex,spatula,tongs,baking_pan,chefs_knife,cutting_board,liquid_measuring_cup,dry_measuring_cups,measuring_spoons,mixing_bowl',
+      type: recipe}
+    created: 2019-03-12 00:57:04+0000
+    updated: 2019-03-12 00:57:04+0000
+- model: recipes.recipe
+  pk: 38
+  fields:
+    source: 1
+    name: Anything-You-Got Curry Soup
+    url: https://tasty.co/recipe/anything-you-got-curry-soup/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/e8f0884e55fb4c6186b97e64b0a298ae/OO_Soup.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4775, object_name: anything-you-got-curry-soup, tags: 'comfort_food,healthy,easy,under_30_minutes,dinner,weeknight,stove_top,one_pot_or_pan,pan_fry,pyrex,sauce_pan,spatula,chefs_knife,cutting_board,liquid_measuring_cup,dry_measuring_cups,measuring_spoons',
+      type: recipe}
+    created: 2019-03-12 00:57:04+0000
+    updated: 2019-03-12 00:57:04+0000
+- model: recipes.recipe
+  pk: 39
+  fields:
+    source: 1
+    name: Gourmet 4-Ingredient Chocolate Mousse
+    url: https://tasty.co/recipe/gourmet-4-ingredient-chocolate-mousse/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/6a9b26922d3c492ca3228bdf4dd83346/OO_4Gourmet.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4769, object_name: gourmet-4-ingredient-chocolate-mousse, tags: '5_ingredients_or_less,valentines_day,desserts,tasty_cookbook,hand_mixer,stove_top,spatula,liquid_measuring_cup,mixing_bowl,one_top_app_dessert',
+      type: recipe}
+    created: 2019-03-12 00:57:04+0000
+    updated: 2019-03-12 00:57:04+0000
+- model: recipes.recipe
+  pk: 40
+  fields:
+    source: 1
+    name: Instant-Pot Whole Herb Chicken
+    url: https://tasty.co/recipe/instant-pot-whole-herb-chicken/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/204237.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4774, object_name: instant-pot-whole-herb-chicken, tags: 'comfort_food,dairy_free,gluten_free,healthy,low_carb,easy,dinner,kid_friendly,weeknight,stove_top,one_pot_or_pan,oven_mitts,pyrex,whisk,wooden_spoon,chefs_knife,cutting_board,liquid_measuring_cup,dry_measuring_cups,measuring_spoons,mixing_bowl,sieve',
+      type: recipe}
+    created: 2019-03-12 00:57:04+0000
+    updated: 2019-03-12 00:57:04+0000
+- model: recipes.recipe
+  pk: 41
+  fields:
+    source: 1
+    name: Freezer-Prep Veggie Breakfast Burritos
+    url: https://tasty.co/recipe/freezer-prep-veggie-breakfast-burritos/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/204163.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4773, object_name: freezer-prep-veggie-breakfast-burritos, tags: 'easy,under_30_minutes,breakfast,brunch,kid_friendly,stove_top,meal_prep,pan_fry,pyrex,saute_pan,tongs,wooden_spoon,chefs_knife,cutting_board,liquid_measuring_cup,dry_measuring_cups,measuring_spoons,mixing_bowl',
+      type: recipe}
+    created: 2019-03-12 00:57:06+0000
+    updated: 2019-03-12 00:57:06+0000
+- model: recipes.recipe
+  pk: 42
+  fields:
+    source: 1
+    name: One-Pan Whole Roasted Chicken &amp; Veggies
+    url: https://tasty.co/recipe/one-pan-whole-roasted-chicken-veggies/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/204070.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4772, object_name: one-pan-whole-roasted-chicken-veggies, tags: 'comfort_food,dairy_free,gluten_free,healthy,low_carb,easy,christmas,thanksgiving,dinner,kid_friendly,bake,date_night,weeknight,cast_iron_pan,oven,one_pot_or_pan,oven_mitts,pyrex,baking_pan,chefs_knife,cutting_board,liquid_measuring_cup,measuring_spoons,mixing_bowl',
+      type: recipe}
+    created: 2019-03-12 00:57:06+0000
+    updated: 2019-03-12 00:57:06+0000
+- model: recipes.recipe
+  pk: 43
+  fields:
+    source: 1
+    name: Unicorn Cookies As Made By Our Facebook Cookie Contest Winner
+    url: https://tasty.co/recipe/unicorn-cookies-as-made-by-our-facebook-cookie-contest-winner/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/204043.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4771, object_name: unicorn-cookies-as-made-by-our-facebook-cookie-contest-winner,
+      tags: 'desserts,bake,hand_mixer,oven,indulgent_sweets,bakery_goods,ice_cream_scoop,oven_mitts,parchment_paper,pyrex,spatula,baking_pan,liquid_measuring_cup,dry_measuring_cups,measuring_spoons,mixing_bowl,holiday_cookie_recipe',
+      type: recipe}
+    created: 2019-03-12 00:57:06+0000
+    updated: 2019-03-12 00:57:06+0000
+- model: recipes.recipe
+  pk: 44
+  fields:
+    source: 1
+    name: Beet Gnocchi
+    url: https://tasty.co/recipe/beet-gnocchi/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/203847.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4767, object_name: beet-gnocchi, tags: 'comfort_food,vegetarian,valentines_day,dinner,date_night,food_processor,stove_top,special_occasion,cheese_grater,parchment_paper,peeler,saute_pan,spatula,baking_pan,chefs_knife,cutting_board,dry_measuring_cups,measuring_spoons,mixing_bowl',
+      type: recipe}
+    created: 2019-03-12 00:57:06+0000
+    updated: 2019-03-12 00:57:06+0000
+- model: recipes.recipe
+  pk: 45
+  fields:
+    source: 1
+    name: Chocolate Gravy
+    url: https://tasty.co/recipe/chocolate-gravy/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/203962.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4770, object_name: chocolate-gravy, tags: 'under_30_minutes,desserts,stove_top,indulgent_sweets,one_pot_or_pan,special_occasion,sauce_pan,spatula,whisk,dry_measuring_cups,measuring_spoons,sieve',
+      type: recipe}
+    created: 2019-03-12 00:57:06+0000
+    updated: 2019-03-12 00:57:06+0000
+- model: recipes.recipe
+  pk: 46
+  fields:
+    source: 1
+    name: Easy 3-Ingredient Chocolate Mousse
+    url: https://tasty.co/recipe/easy-3-ingredient-chocolate-mousse/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/203876.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4768, object_name: easy-3-ingredient-chocolate-mousse, tags: '5_ingredients_or_less,easy,valentines_day,desserts,stove_top,indulgent_sweets,sauce_pan,spatula,whisk,liquid_measuring_cup',
+      type: recipe}
+    created: 2019-03-12 00:57:06+0000
+    updated: 2019-03-12 00:57:06+0000
+- model: recipes.recipe
+  pk: 47
+  fields:
+    source: 1
+    name: 'Astrology Avocado Toast '
+    url: https://tasty.co/compilation/astrology-avocado-toast/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/203658.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 863, object_name: astrology-avocado-toast, tags: 'under_30_minutes,easy',
+      type: compilation}
+    created: 2019-03-12 00:57:06+0000
+    updated: 2019-03-12 00:57:06+0000
+- model: recipes.recipe
+  pk: 48
+  fields:
+    source: 1
+    name: Immunity Boosting Green Soup
+    url: https://tasty.co/recipe/immunity-boosting-green-soup/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/203449.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4751, object_name: immunity-boosting-green-soup, tags: 'comfort_food,healthy,easy,dinner,blender,oven,stove_top,big_batch,pan_fry,pyrex,sauce_pan,wooden_spoon,chefs_knife,cutting_board,liquid_measuring_cup,dry_measuring_cups,measuring_spoons',
+      type: recipe}
+    created: 2019-03-12 00:57:06+0000
+    updated: 2019-03-12 00:57:06+0000
+- model: recipes.recipe
+  pk: 49
+  fields:
+    source: 1
+    name: Steamed Whole Fish As Made By Holly Young
+    url: https://tasty.co/recipe/steamed-whole-fish-as-made-by-holly-young/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/203504.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4754, object_name: steamed-whole-fish-as-made-by-holly-young, tags: 'chinese,dinner,steam,date_night,winter,stove_top,special_occasion,pyrex,saute_pan,chefs_knife,cutting_board,measuring_spoons,mixing_bowl',
+      type: recipe}
+    created: 2019-03-12 00:57:06+0000
+    updated: 2019-03-12 00:57:06+0000
+- model: recipes.recipe
+  pk: 50
+  fields:
+    source: 1
+    name: "Chef Jj\u2019s Plantain Nachos"
+    url: https://tasty.co/recipe/chef-jjs-plantain-nachos/
+    ingredients: ''
+    directions: ''
+    ingredients_json: []
+    directions_json: []
+    image_url: https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/203652.jpg?output-format=webp&output-quality=60&resize=600:*
+    status: 9
+    extra: {id: 4753, object_name: chef-jjs-plantain-nachos, tags: 'american,comfort_food,dinner,snacks,bake,game_day,casual_party,fusion,oven,stove_top,big_batch,oven_mitts,pyrex,saute_pan,tongs,whisk,wooden_spoon,baking_pan,chefs_knife,cutting_board,fish_spatula,liquid_measuring_cup,measuring_spoons,microplane,mixing_bowl',
+      type: recipe}
+    created: 2019-03-12 00:57:06+0000
+    updated: 2019-03-12 00:57:06+0000

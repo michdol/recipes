@@ -11,4 +11,4 @@ class RecipeList(generics.ListAPIView):
 	permission_classes = (AllowAny,)
 
 	def get_queryset(self):
-		return Recipe.objects.filter(status__gte=RECIPE_STATUS_PUBLIC)
+		return Recipe.objects.filter(status__gte=RECIPE_STATUS_PUBLIC).order_by('id')

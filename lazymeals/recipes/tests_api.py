@@ -4,10 +4,16 @@ from utils.test import ApiTestCase
 
 
 class ASD(ApiTestCase):
-	def test_test(self):
-		s = SourceWebsite.objects.create(name='asd', url='asdasd')
-		r = Recipe.objects.create(name='asd', source_id=s.id, status=9)
+	fixtures = ('source_websites', 'recipes')
+
+	def test_get(self):
 		response = self.client.get(api_reverse('recipes_list'))
-		results = response.data
-		self.assertEqual(len(results), 1)
-		self.assertEqual(results[0].get("name"), r.name)
+		results = response.data.get('results')
+		self.assertEqual(len(results), 20)
+
+		self.assertEqual(results[0].get('id'), 1)
+		self.assertEqual(results[0].get('name'), 'Flavorful Egg Recipes Anyone Can Make')
+		self.assertEqual(results[0].get('source'), 1)
+		self.assertEqual(results[19].get('id'), 19)
+		self.assertEqual(results[19].get('name'), 'Siga Tibs And Ethiopian Salad')
+		self.assertEqual(results[19].get('source'), 1)
