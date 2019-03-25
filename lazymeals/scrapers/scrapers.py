@@ -3,28 +3,68 @@ import logging
 import operator
 import requests
 
-from bs4 import BeautifulSoup
-from contextlib import closing
-
 from django.conf import settings
-from requests.exceptions import RequestException
 from time import sleep
 
 from django.db import connection
 
-from recipes.constants import TASTY_SOURCE_ID, RECIPE_STATUS_CREATED
-from recipes.models import SourceWebsite, Recipe
-
+from recipes.constants import RECIPE_STATUS_CREATED
+from recipes.models import SourceWebsite
+from scrapers.constants import SCRAPER_NAME_TASTY
+from scrapers.models import Scraper, ScraperLog
 
 logger = logging.getLogger(getattr(settings, 'LOG_ROOT'))
 
-class TastyScrapper(object):
+DELAYS = [1, 1.5, 2, 2.5, 3, 3.5]
+
+
+class BaseScrapper(object):
 	DEFAULT_PAGE_SIZE = 20
+	USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'
+	REFERER = "https://www.google.jp"
+	BASE_URL = None
+	SCRAPER_NAME = None
+
 	def __init__(self, page_size=None):
-		self.website_id = TASTY_SOURCE_ID
-		self.website = SourceWebsite.objects.get(id=self.website_id)
-		self.base_url = 'https://tasty.co/{}'
-		self.api_base_url = self.base_url.format('api/{}')
+		self.scraper = Scraper.objects.get(name=self.SCRAPER_NAME)
+		self.source_id = self.scraper.source_id
+		self.source = SourceWebsite.objects.get(id=self.scraper.source_id)
+		assert self.BASE_URL is not None, 'BASE_URL must not be None'
+		self.page_size = page_size if page_size else self.DEFAULT_PAGE_SIZE
+		self.session = None
+		self.scraper = None
+
+	@property
+	def can_run(self):
+		return not ScraperLog.objects.filter(
+			scraper_id=self.scraper.id,
+			finished__isnull=True
+		).exists()
+
+	def main(self):
+		try:
+			self.prepare_session()
+			self.scrape()
+		except Exception as e:
+			logger.error("Exception occurred: {}".format(e))
+			return False
+		logger.info("Successfully finished scraping {}.".format(self.source.url))
+		return True
+
+	def prepare_session(self):
+		self.session = requests.Session()
+
+	def scrape(self):
+		pass
+
+
+class TastyScrapper(BaseScrapper):
+	BASE_URL = 'https://tasty.co/{}'
+	SCRAPER_NAME = SCRAPER_NAME_TASTY
+
+	def __init__(self, page_size=None):
+		super().__init__(page_size)
+		self.api_base_url = self.BASE_URL.format('api/{}')
 		self.recent_recipes_endpoint = "recipes/recent"
 		self.api_url = self.api_base_url.format(self.recent_recipes_endpoint)
 		self.api_params_template = "size={size}&from={from}&page={page}&from_offset={from_offset}&__amp_sour"
@@ -32,25 +72,6 @@ class TastyScrapper(object):
 		self.session = None
 		self.recipe_count = None
 		self.requests_count = 0
-
-		"https://tasty.co/api/recipes/recent?size=20&from=20&page=2&from_offset=1&__amp_s"
-		"https://tasty.co/api/recipes/recent?size=20&from=40&page=3&from_offset=1&__amp_sour"
-		"https://tasty.co/api/recipes/recent?size=20&from=60&page=4&from_offset=1&__amp_sour"
-
-	def build_url(self, **params):
-		return "?".join([
-			self.api_url,
-			self.api_params_template.format(**params)
-		])
-
-	@property
-	def initial_params(self):
-		return {
-			'size': self.page_size,
-			'from': 0,
-			'page': 1,
-			'from_offset': 1
-		}
 
 	def get_next_page_params(self, previous=False, **kwargs):
 		operator_ = operator.sub if previous else operator.add
@@ -63,18 +84,13 @@ class TastyScrapper(object):
 		kwargs['page'] = operator_(page, 1)
 		return kwargs
 
-	def main(self):
-		try:
-			self.session = requests.Session()
-			self.scrape()
-		except Exception as e:
-			logger.error("Exception occurred: {}".format(e))
-			return False
-		logger.info("Successfully finished scraping {}.".format(self.website.url))
-		return True
-
 	def scrape(self):
-		params = self.initial_params
+		params = {
+			'size': self.page_size,
+			'from': 0,
+			'page': 1,
+			'from_offset': 1
+		}
 		url = self.build_url(**params)
 		while self.requests_count < 10:
 			response = self.session.get(url)
@@ -87,7 +103,14 @@ class TastyScrapper(object):
 			self.create_recipes(response.get('items'))
 			params = self.get_next_page_params(**params)
 			url = self.build_url(**params)
-			sleep(1)
+			if not settings.TESTING:
+				sleep(1)
+
+	def build_url(self, **params):
+		return "?".join([
+			self.api_url,
+			self.api_params_template.format(**params)
+		])
 
 	def parse_response(self, response):
 		if response.get('status') != 'ok':
@@ -107,7 +130,7 @@ class TastyScrapper(object):
 		values = []
 		for item in items:
 			values.append("({source_id},'{name}','{url}','{image_url}','{extra}','','','[]','[]',{status},current_timestamp,current_timestamp)".format(
-				source_id=self.website_id,
+				source_id=self.source_id,
 				name=item.get('name'),
 				url=self._create_tasty_url(item.get('slug'), item.get('type')),
 				image_url=item.get('thumb_big'),
@@ -117,7 +140,7 @@ class TastyScrapper(object):
 		return ','.join(values)
 
 	def _create_tasty_url(self, slug, type_):
-		return self.base_url.format('{type}/{slug}/'.format(type=type_, slug=slug))
+		return self.BASE_URL.format('{type}/{slug}/'.format(type=type_, slug=slug))
 
 	def generate_json_value(self, item):
 		return json.dumps({

@@ -1,0 +1,1 @@
+SCRAPER_NAME_TASTY = 'tasty'

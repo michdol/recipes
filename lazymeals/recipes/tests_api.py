@@ -1,9 +1,8 @@
-from recipes.models import Recipe, SourceWebsite
 from utils.subdomain import api_reverse
 from utils.test import ApiTestCase
 
 
-class ASD(ApiTestCase):
+class RecipeListTest(ApiTestCase):
 	fixtures = ('source_websites', 'recipes')
 
 	def test_get(self):
