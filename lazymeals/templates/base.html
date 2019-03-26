@@ -5,12 +5,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="{% static "base.less"|compile %}" />
+    <script src="{% static 'js/main.js' %}"></script>
+    <link rel="stylesheet" href="{% static "css/base.less"|compile %}" />
     {% block extra_css %}{% endblock extra_css %}
 </head>
 <body>
+    {% csrf_token %}
     <div id="header">
         <h1>header</h1>
+        <button onclick="window.ajax.getRecipes()">button</button>
     </div>
     <div id="side_menu">
         <h1>side menu</h1>

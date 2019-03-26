@@ -40,8 +40,9 @@ PROJECT_APPS = (
 )
 
 THIRD_PARTY_APPS = (
+	'corsheaders',
+	'rest_framework',
 	'static_precompiler',
-	'rest_framework'
 )
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
@@ -50,6 +51,7 @@ MIDDLEWARE = [
 	'django.middleware.security.SecurityMiddleware',
 	'django.contrib.sessions.middleware.SessionMiddleware',
 	'subdomains.middleware.SubdomainURLRoutingMiddleware',
+	'corsheaders.middleware.CorsMiddleware',
 	'django.middleware.common.CommonMiddleware',
 	'django.middleware.csrf.CsrfViewMiddleware',
 	'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -58,6 +60,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'lazymeals.urls.frontend'
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 
 TEMPLATES = [
 	{

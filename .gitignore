@@ -1,0 +1,6 @@
+.idea/
+*.pyc
+lazymeals/lazymeals/settings/settings_credentials.py
+lazymeals/node_modules/
+lazymeals/static/COMPILED/
+lazymeals/static/*/COMPILED/

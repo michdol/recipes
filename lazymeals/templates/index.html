@@ -2,11 +2,11 @@
 {% load compile_static %}
 {% load static %}
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static "index.less"|compile %}" />
+    <link rel="stylesheet" href="{% static "css/index.less"|compile %}" />
+    {{ block.super }}
 {% endblock extra_css %}
 
 {% block content %}
-<h1>INDEX.HTML</h1>
 <ul id="main_recipes">
     {% for recipe in recipes %}
     <li class="recipe">
