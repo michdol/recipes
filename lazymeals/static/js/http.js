@@ -2,29 +2,14 @@
 
     'use strict';
     var ajax = {
-        get : get,
         getRecipes: getRecipes,
         getCookie: getCookie,
-        testGet: testGet
+        get: get
     };
 
     var api = {
         recipes: "http://api.lazymeals.local:8000/recipes/"
     };
-
-    function get(url, data, callback) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', url + (data ? '?' + dataToUrl(data) : ''));
-        xhr.onload = function () {
-            if (xhr.status === 200) {
-                callback(null, JSON.parse(xhr.responseText));
-            }
-            else {
-                callback(new Error('Request failed.  Returned status of ' + xhr.status));
-            }
-        };
-        xhr.send();
-    }
 
     function dataToUrl(object) {
         var encodedString = '';
@@ -40,7 +25,7 @@
     }
 
     function getRecipes() {
-        ajax.testGet(api.recipes, '', function(err, results) {
+        ajax.get(api.recipes, '', function(err, results) {
             if (!err && results) {
                 console.log('res', results);
             }
@@ -66,7 +51,7 @@
         return cookieValue;
     }
 
-    function testGet(url, data, callback) {
+    function get(url, data, callback) {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url + (data ? '?' + dataToUrl(data) : ''));
         xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken'));
@@ -80,23 +65,6 @@
         };
         xhr.send();
     }
-
-    console.log(readTemplate('recipe'));
-
-    var main_recipes = $('#main_recipes');
-    main_recipes.scroll(function() {
-        var main_recipes_height = main_recipes.height();
-       console.log(main_recipes.scrollTop());
-       console.log(main_recipes.height());
-
-       if (main_recipes.scrollTop() >= main_recipes_height) {
-           console.log('asd')
-       }
-
-        // if($('#main_recipes').scrollTop() + $('#main_recipes').height() == $(document).height()) {
-       //     alert("bottom!");
-       // }
-    });
 
     window.ajax = ajax;
 

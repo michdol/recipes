@@ -5,7 +5,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="{% static 'js/main.js' %}"></script>
     <link rel="stylesheet" href="{% static "css/base.less"|compile %}" />
     {% block extra_css %}{% endblock extra_css %}
 </head>
@@ -13,7 +12,6 @@
     {% csrf_token %}
     <div id="header">
         <h1>header</h1>
-        <button onclick="window.ajax.getRecipes()">button</button>
     </div>
     <div id="side_menu">
         <h1>side menu</h1>
@@ -25,5 +23,11 @@
     <div id="footer">
         <h1>footer</h1>
     </div>
+
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/http.js' %}"></script>
+    <script src="{% static 'js/templates.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
