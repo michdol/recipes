@@ -3,7 +3,7 @@
 var ROOT_URL = 'http://lazymeals.local:8000/static/partials/';
 
 var TEMPLATE_PATHS = {
-    'recipe': 'test.html'
+    'recipe': 'recipe.html'
 };
 
 function readTemplate(alias)
@@ -36,4 +36,26 @@ function getTemplatePath(alias) {
 }
 
 // Usage:
-// readTemplate(getTemplatePath('test'));
+// readTemplate(getTemplatePath('recipe'));
+
+function getDynamicVariables(html_string) {
+    var variables = (html_string.match(/{[\s]?[a-zA-Z0-9\.]+[\s]?}/g) || [])
+    console.log(variables);
+    for (var i=0; i < variables.length; i++) {
+        var original = variables[i];
+        var next = original.replace(/[\{\s\}]/g, '');
+        var splitted = next.split('.');
+        var obj_name = splitted[0];
+        var property_name = splitted[1];
+        var obj = window.scope[obj_name];
+        var property_value = obj[property_name];
+    }
+}
+// 1. define if it is a single variable or an object
+// 2. if it is single variable -> get value from scope
+// 3. if it is object -> define if it is nested property
+
+function test() {
+    var html = readTemplate('recipe');
+    getDynamicVariables(html)
+}

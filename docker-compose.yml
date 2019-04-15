@@ -21,6 +21,16 @@ services:
     depends_on:
       - db
 
+  anaconda:
+    image: recipes_web
+    ports:
+      - "19360:19360"
+    volumes:
+      - /c/Users/md696/AppData/Roaming/Sublime Text 3/Packages/Anaconda:/opt/anaconda
+    depends_on:
+      - web
+    entrypoint: /opt/anaconda/anaconda_server/docker/start python3 19360 recipes /var/recipes
+
 volumes:
   postgres_data:
   .:

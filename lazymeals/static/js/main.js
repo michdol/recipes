@@ -81,7 +81,7 @@
         xhr.send();
     }
 
-    console.log(readTemplate('recipe'));
+    
 
     var main_recipes = $('#main_recipes');
     main_recipes.scroll(function() {
@@ -99,5 +99,13 @@
     });
 
     window.ajax = ajax;
+    window.scope = {
+        recipe: {
+            url: 'http:/url',
+            name: 'recipe name'
+        }
+    }
+    //console.log(readTemplate('recipe'));
+    test();
 
 })(window);

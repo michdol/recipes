@@ -3,8 +3,6 @@ from django.contrib.sites.models import Site
 from rest_framework.test import APITestCase
 
 
-
-
 class ApiTestCase(APITestCase):
     DOMAIN = 'lazymeals.local'
 

@@ -6,7 +6,8 @@ RUN apt-get update && apt-get install -y \
     python3-dev \
     python3-pip \
     vim \
-    npm
+    npm \
+    git
 
 RUN npm install -g less
 RUN mkdir /var/run/sshd
