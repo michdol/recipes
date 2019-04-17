@@ -24,10 +24,11 @@
         return encodedString;
     }
 
-    function getRecipes() {
+    function getRecipes(scope) {
         ajax.get(api.recipes, '', function(err, results) {
             if (!err && results) {
                 console.log('res', results);
+                scope['recipes'] = results
             }
             else {
                 console.log('error', err);

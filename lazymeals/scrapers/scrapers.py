@@ -48,7 +48,8 @@ class BaseScrapper(object):
 		except Exception as e:
 			logger.error("Exception occurred: {}".format(e))
 			return False
-		logger.info("Successfully finished scraping {}.".format(self.source.url))
+		logger.info(
+			"Successfully finished scraping {}.".format(self.source.url))
 		return True
 
 	def prepare_session(self):
@@ -78,8 +79,9 @@ class TastyScrapper(BaseScrapper):
 		size = kwargs.get('size')
 		from_ = kwargs.get('from')
 		page = kwargs.get('page')
-		if previous and from_ - size < 0 or page -1 < 0:
-			raise ValueError("Invalid parameters: page - %s; from - %s" % (page, from_))
+		if previous and from_ - size < 0 or page - 1 < 0:
+			raise ValueError(
+				"Invalid parameters: page - %s; from - %s" % (page, from_))
 		kwargs['from'] = operator_(from_, size)
 		kwargs['page'] = operator_(page, 1)
 		return kwargs
@@ -121,9 +123,9 @@ class TastyScrapper(BaseScrapper):
 		values = self.generate_sql_values(items)
 		with connection.cursor() as cursor:
 			cursor.execute("""
-			INSERT INTO recipes_recipe (source_id, name, url, image_url, extra, ingredients, directions, ingredients_json, directions_json, status, created, updated)
-			VALUES {values}
-			ON CONFLICT DO NOTHING;
+				INSERT INTO recipes_recipe (source_id, name, url, image_url, extra, ingredients, directions, ingredients_json, directions_json, status, created, updated)
+				VALUES {values}
+				ON CONFLICT DO NOTHING;
 			""".format(values=values))
 
 	def generate_sql_values(self, items):
@@ -145,7 +147,7 @@ class TastyScrapper(BaseScrapper):
 	def generate_json_value(self, item):
 		return json.dumps({
 			'id': item.get('id'),
-			'tags': ','.join(item.get('tags')),
-			'type': item.get('type'),
-			'object_name': item.get('object_name')
-		})
+            'tags': ','.join(item.get('tags')),
+            'type': item.get('type'),
+            'object_name': item.get('object_name')
+        })
