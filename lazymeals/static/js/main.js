@@ -101,11 +101,33 @@
     window.ajax = ajax;
     window.scope = {
         recipe: {
-            url: 'http:/url',
-            name: 'recipe name'
-        }
+            url: 'https://url.jp/',
+            image_url: 'https://www.petmd.com/sites/default/files/petmd-kitten-development.jpg',
+            name: 'recipe name',
+            inner: {
+                id: 666
+            }
+        },
+        recipes: [
+            {
+                url: 'https://url.jp/',
+                image_url: 'https://www.petmd.com/sites/default/files/petmd-kitten-development.jpg',
+                name: 'kitten',
+                inner: {
+                    id: 666
+                }
+            },
+            {
+                url: 'https://url.jp/',
+                image_url: 'https://www.gettyimages.com/gi-resources/images/500px/983794168.jpg',
+                name: 'fisherman',
+                inner: {
+                    id: 666
+                }
+            }
+        ]
     }
     //console.log(readTemplate('recipe'));
-    test();
+    renderMultipleTemplates('recipe', window.scope.recipes, $('#main_recipes'));
 
 })(window);

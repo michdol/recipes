@@ -2,7 +2,7 @@
 {% load compile_static %}
 {% load static %}
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static "css/index.less"|compile %}" />
+    <link rel="stylesheet" href="{% static 'css/index.less'|compile %}" />
     {{ block.super }}
 {% endblock extra_css %}
 
