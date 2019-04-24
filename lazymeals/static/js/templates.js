@@ -39,7 +39,6 @@ function renderMultipleTemplates(template_name, data, target_dom_element) {
     for (var i = 0; i < data.length; i++) {
         var obj = data[i];
         var ret = applyDynamicValues(html, obj);
-        console.log(ret);
         target_dom_element.append(ret);
     }
 }

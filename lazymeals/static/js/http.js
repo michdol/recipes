@@ -2,9 +2,7 @@
 
     'use strict';
     var ajax = {
-        getRecipes: getRecipes,
-        getCookie: getCookie,
-        get: get
+        getRecipes: getRecipes
     };
 
     var api = {
@@ -25,10 +23,10 @@
     }
 
     function getRecipes(scope) {
-        ajax.get(api.recipes, '', function(err, results) {
-            if (!err && results) {
-                console.log('res', results);
-                scope['recipes'] = results
+        get(api.recipes, '', function(err, response) {
+            if (!err && response) {
+                console.log('res', response);
+                scope['recipes'] = response.results;
             }
             else {
                 console.log('error', err);
