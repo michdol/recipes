@@ -11,17 +11,15 @@ from scrapers.scrapers import TastyScrapper
 
 class ScrapperTestMixin(object):
 	scrapper_class = None
-	source_id = None
 	scrapper = None
 
 	def setUp(self):
-		self.scrapper = self.scrapper_class(source_id=self.source_id)
+		self.scrapper = self.scrapper_class()
 
 
 class TastyScrapperTest(ScrapperTestMixin, TestCase):
 	fixtures = ('source_websites',)
 	scrapper_class = TastyScrapper
-	source_id = TASTY_SOURCE_ID
 	TEST_DATA_DIRECTORY = os.path.join(os.path.dirname(__file__), 'test_data/')
 
 	def test_build_url(self):

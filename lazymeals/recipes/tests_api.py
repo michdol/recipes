@@ -13,6 +13,6 @@ class RecipeListTest(ApiTestCase):
 		self.assertEqual(results[0].get('id'), 1)
 		self.assertEqual(results[0].get('name'), 'Flavorful Egg Recipes Anyone Can Make')
 		self.assertEqual(results[0].get('source'), 1)
-		self.assertEqual(results[19].get('id'), 19)
+		self.assertEqual(results[19].get('id'), 20)
 		self.assertEqual(results[19].get('name'), 'Siga Tibs And Ethiopian Salad')
 		self.assertEqual(results[19].get('source'), 1)
