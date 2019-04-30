@@ -1,12 +1,14 @@
 ( function(window) {
 
     'use strict';
-    var ajax = {
-        getRecipes: getRecipes
-    };
 
     var api = {
         recipes: "http://api.lazymeals.local:8000/recipes/"
+    };
+
+    var ajax = {
+        api: api,
+        get: get
     };
 
     function dataToUrl(object) {
@@ -20,18 +22,6 @@
             }
         }
         return encodedString;
-    }
-
-    function getRecipes(scope) {
-        get(api.recipes, '', function(err, response) {
-            if (!err && response) {
-                console.log('res', response);
-                scope['recipes'] = response.results;
-            }
-            else {
-                console.log('error', err);
-            }
-        });
     }
 
     function getCookie(name) {
