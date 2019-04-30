@@ -1,7 +1,7 @@
 from django.db import migrations, models
 from django.utils import timezone
 import django.db.models.deletion
-from scrapers.constants import SCRAPER_NAME_TASTY
+from scrapers.constants import SCRAPER_NAME_TASTY, SCRAPER_NAME_TASTY_API
 
 
 def insert_scraper(apps, schema_editor):
@@ -12,6 +12,9 @@ def insert_scraper(apps, schema_editor):
     scraper = Scraper.objects.create(name=SCRAPER_NAME_TASTY, source_id=source.id)
     yesterday = timezone.now() - timezone.timedelta(days=1)
     ScraperLog.objects.create(scraper=scraper, started=yesterday, finished=yesterday)
+    api_scraper = Scraper.objects.create(name=SCRAPER_NAME_TASTY_API, source_id=source.id)
+    ScraperLog.objects.create(scraper=api_scraper, started=yesterday, finished=yesterday)
+
 
 class Migration(migrations.Migration):
 

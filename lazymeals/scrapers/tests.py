@@ -4,9 +4,8 @@ import os
 
 from django.test import TestCase
 
-from recipes.constants import TASTY_SOURCE_ID
 from recipes.models import Recipe
-from scrapers.scrapers import TastyScrapper
+from scrapers.scrapers import TastyApiScrapper, TastyScrapper
 
 
 class ScrapperTestMixin(object):
@@ -17,9 +16,9 @@ class ScrapperTestMixin(object):
 		self.scrapper = self.scrapper_class()
 
 
-class TastyScrapperTest(ScrapperTestMixin, TestCase):
+class TastyApiScrapperTest(ScrapperTestMixin, TestCase):
 	fixtures = ('source_websites',)
-	scrapper_class = TastyScrapper
+	scrapper_class = TastyApiScrapper
 	TEST_DATA_DIRECTORY = os.path.join(os.path.dirname(__file__), 'test_data/')
 
 	def test_build_url(self):
@@ -235,3 +234,9 @@ class TastyScrapperTest(ScrapperTestMixin, TestCase):
 		self.assertEqual(chicken_extra.get('tags'), 'american,italian')
 		self.assertEqual(chicken_extra.get('type'), 'recipe')
 		self.assertEqual(chicken_extra.get('object_name'), 'one-pot-chicken-alfredo')
+
+
+class TastyScrapperTest(ScrapperTestMixin, TestCase):
+	fixtures = ('source_websites',)
+	scrapper_class = TastyScrapper
+	TEST_DATA_DIRECTORY = os.path.join(os.path.dirname(__file__), 'test_data/')

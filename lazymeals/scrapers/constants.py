@@ -1,1 +1,2 @@
 SCRAPER_NAME_TASTY = 'tasty'
+SCRAPER_NAME_TASTY_API = 'tasty-api'

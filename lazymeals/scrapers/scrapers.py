@@ -3,14 +3,15 @@ import logging
 import operator
 import requests
 
-from django.conf import settings
+from bs4 import BeautifulSoup
 from time import sleep
 
+from django.conf import settings
 from django.db import connection
 
 from recipes.constants import RECIPE_STATUS_CREATED
 from recipes.models import SourceWebsite
-from scrapers.constants import SCRAPER_NAME_TASTY
+from scrapers.constants import SCRAPER_NAME_TASTY, SCRAPER_NAME_TASTY_API
 from scrapers.models import Scraper, ScraperLog
 
 logger = logging.getLogger(getattr(settings, 'LOG_ROOT'))
@@ -59,9 +60,23 @@ class BaseScrapper(object):
 		pass
 
 
+import pdb
 class TastyScrapper(BaseScrapper):
 	BASE_URL = 'https://tasty.co/{}'
 	SCRAPER_NAME = SCRAPER_NAME_TASTY
+	def scrape(self):
+	#recipes = Recipe.objects.filter(source_id=self.source.id, status=RECIPE_STATUS_CREATED)
+		response = requests.get('https://tasty.co/recipe/dairy-free-chicken-fettuccine-alfredo')
+		soup = BeautifulSoup(response.content.decode('utf-8'), 'html.parser')
+		ingredients = soup.find('div', class_='ingredients__section')
+		pdb.set_trace()
+		#print(ingredients.encode('utf-8', 'ignore'))
+
+
+
+class TastyApiScrapper(BaseScrapper):
+	BASE_URL = 'https://tasty.co/{}'
+	SCRAPER_NAME = SCRAPER_NAME_TASTY_API
 
 	def __init__(self, page_size=None):
 		super().__init__(page_size)
